@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="height" constant="50" id="GIA-32-8Mj"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Iyt-OS-pRj" kind="embed" id="JDg-bb-Zqd"/>
+                                    <segue destination="Iyt-OS-pRj" kind="embed" identifier="searchBar" id="JDg-bb-Zqd"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="130.04926108374386"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="B7e-le-ikk">
             <objects>
-                <viewController id="Iyt-OS-pRj" sceneMemberID="viewController">
+                <viewController id="Iyt-OS-pRj" customClass="SearchViewController" customModule="HandyMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4b8-23-HTV">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,6 +98,9 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="innerBar" destination="VxO-ch-kJ6" id="Cdd-gp-p8r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mIN-hz-mLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

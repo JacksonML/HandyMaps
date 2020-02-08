@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey("AIzaSyCALcdO6LXZfWUf-7GyuUztZl0tqzSokgs")
-        GMSPlacesClient.provideAPIKey("AIzaSyCpz9tcHkoo6ffY1S_VPdSpbI6VPV6nOac")
+        GMSServices.provideAPIKey("ENTER_KEY_HERE")
+        GMSPlacesClient.provideAPIKey("ENTER_KEY_HERE")
         return true
     }
 
