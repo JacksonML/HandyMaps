@@ -1,5 +1,5 @@
 //
-//  SearchBarViewController.swift
+//  SearchViewController.swift
 //  HandyMaps
 //
 //  Created by Jackson Lucas on 2/8/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class SearchBarViewController: UIViewController {
+class SearchViewController: UIViewController {
 
-    @IBOutlet weak var innerView: UIView!
+    @IBOutlet weak var innerBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        innerView.layer.cornerRadius = 10
-        innerView.layer.masksToBounds = true
+
         // Do any additional setup after loading the view.
     }
     

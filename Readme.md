@@ -15,5 +15,6 @@ If the GoogleMaps SDK that is installed is not version `3.7`, run `pod update`
 Open `HandyMaps.xcworkspace` with XCode
 
 You will need to provide your own Google Cloud API Key in `AppDelegate.swift` and `ViewController.swift`
+Your API credential will need to have `Directions API` ,`Maps SKD for iOS`, and `Places API` enabled.
 
 Run the program

@@ -17,12 +17,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     
     
     var searchViewController: SearchViewController?
+    var popupViewController :  PopupViewController?
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         if segue.identifier == "searchBar" {
-
+            
             if let vc = segue.destination as? SearchViewController {
                 searchViewController = vc
+            }
+        } else if segue.identifier == "popupDirections" {
+            if let vc = segue.destination as? PopupViewController {
+                popupViewController = vc
             }
         }
     }
@@ -49,7 +54,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         mapViewMap.delegate = self
         
         searchViewController?.innerBar.delegate = self
-        
         
         let camera = GMSCameraPosition.camera(withLatitude: 33.9475, longitude: -83.375, zoom: 15.0)
         mapViewMap.layoutIfNeeded()
@@ -110,7 +114,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
                 if let types = place.types {
                     self.infoMarker.snippet = types[0]
                 }
-                print("The selected place is: \(place.name)")
+                print("The selected place is: \(String(describing: place.name)) with placeID: \(String(describing: place.placeID))")
             }
         })
         
@@ -122,6 +126,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         mapView.selectedMarker = infoMarker
     }
     
+    var destination: CLLocation = .init()
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let client: GMSPlacesClient = GMSPlacesClient()
         client.autocompleteQuery(searchBar.text!, bounds: .none, filter: .none, callback: {
@@ -143,11 +148,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
                     if let place = place {
                         print("The selected place is: \(place.name)")
                         var destinationCoordinate = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-                        self.fetchDirections(origin: (self.userLocation?.location)!, destination: destinationCoordinate)
+                        self.performSegue(withIdentifier: "popupDirections", sender: nil)
+                        self.popupViewController?.name = place.name!
+                        self.popupViewController?.origin = (self.userLocation?.location!)!
+                        self.popupViewController?.destination = destinationCoordinate
+                        self.popupViewController?.parentViewViewController = self
+                        self.destination = destinationCoordinate
+                        //self.fetchDirections(origin: (self.userLocation?.location)!, destination: destinationCoordinate)
                     }
                     
                 })
-
                 
             }
         })
@@ -160,40 +170,49 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         let destinationCoords = String(destination.coordinate.latitude) + "," + String(destination.coordinate.longitude)
         let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=" + originCoords + "&destination=" + destinationCoords + "&mode=walking&key=ENTER_KEY_HERE"
         let url = NSURL(string: urlString)
-
-                let task = URLSession.shared.dataTask(with: url! as URL) { (data, response, error) -> Void in
-
-                    do {
-                        if data != nil {
-                            let dic = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableLeaves) as!  [String:AnyObject]
-//                                print(dic)
-
-                            let status = dic["status"] as! String
-                            var routesArray:String!
-                            if status == "OK" {
-                                routesArray = (((dic["routes"]!as! [Any])[0] as! [String:Any])["overview_polyline"] as! [String:Any])["points"] as! String
-                            }
-
-                            DispatchQueue.main.async {
-                                let path = GMSPath.init(fromEncodedPath: routesArray!)
-                                let singleLine = GMSPolyline.init(path: path)
-                                singleLine.strokeWidth = 6.0
-                                singleLine.strokeColor = .blue
-                                singleLine.map = self.mapViewMap
-                            }
-
-                        }
-                    } catch {
-                        print("Error")
+        
+        let task = URLSession.shared.dataTask(with: url! as URL) { (data, response, error) -> Void in
+            
+            do {
+                if data != nil {
+                    let dic = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableLeaves) as!  [String:AnyObject]
+                    //                                print(dic)
+                    
+                    let status = dic["status"] as! String
+                    var routesArray:String!
+                    if status == "OK" {
+                        routesArray = (((dic["routes"]!as! [Any])[0] as! [String:Any])["overview_polyline"] as! [String:Any])["points"] as! String
                     }
+                    
+                    DispatchQueue.main.async {
+                        let path = GMSPath.init(fromEncodedPath: routesArray!)
+                        let singleLine = GMSPolyline.init(path: path)
+                        singleLine.strokeWidth = 6.0
+                        singleLine.strokeColor = .blue
+                        singleLine.map = self.mapViewMap
+                    }
+                    
                 }
-
-                task.resume()
+            } catch {
+                print("Error")
+            }
+        }
+        
+        task.resume()
     }
 }
 
 extension ViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        reverseGeocodeCoordinate(position.target)
+        //        reverseGeocodeCoordinate(position.target)
+    }
+}
+
+extension ViewController: UIPopoverPresentationControllerDelegate {
+    
+    func popoverPresentationControllerDidDismissPopover() {
+        print("GO BACL")
+        
+        fetchDirections(origin: (self.userLocation?.location!)!, destination: destination)
     }
 }

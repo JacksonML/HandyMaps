@@ -16,19 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3W-KV-gOd" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jj-4y-aEU">
-                                <rect key="frame" x="0.0" y="693" width="375" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJq-ZA-NZi">
-                                <rect key="frame" x="172.66666666666666" y="714" width="30" height="30"/>
-                                <state key="normal" title="Test"/>
-                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ptp-p3-mtV">
                                 <rect key="frame" x="16" y="52" width="343" height="50"/>
                                 <constraints>
@@ -42,24 +32,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Y3W-KV-gOd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="11A-Go-wGP"/>
-                            <constraint firstItem="cJq-ZA-NZi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3fz-qG-5m5"/>
+                            <constraint firstItem="Y3W-KV-gOd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3au-Dh-3zK"/>
                             <constraint firstItem="Ptp-p3-mtV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="4MJ-ZN-EEc"/>
-                            <constraint firstItem="cJq-ZA-NZi" firstAttribute="top" secondItem="8jj-4y-aEU" secondAttribute="bottom" id="5KE-J1-bgJ"/>
-                            <constraint firstItem="8jj-4y-aEU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FZq-cM-ack"/>
                             <constraint firstItem="Ptp-p3-mtV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HBS-zR-Bku"/>
-                            <constraint firstItem="8jj-4y-aEU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="O7r-GI-OTO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cJq-ZA-NZi" secondAttribute="bottom" constant="34" id="X70-pw-bwL"/>
                             <constraint firstItem="Y3W-KV-gOd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Xq1-K0-D53"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y3W-KV-gOd" secondAttribute="bottom" constant="-34" id="g9X-ZX-kzt"/>
                             <constraint firstItem="Y3W-KV-gOd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h25-rX-PRm"/>
-                            <constraint firstItem="cJq-ZA-NZi" firstAttribute="top" secondItem="Y3W-KV-gOd" secondAttribute="bottom" constant="34" id="k3u-2q-5v4"/>
+                            <constraint firstItem="Y3W-KV-gOd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uHy-Jk-oFB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ptp-p3-mtV" secondAttribute="trailing" constant="16" id="xWP-gh-Gpj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="RmX-LI-Hca"/>
                     <connections>
-                        <outlet property="addressLabel" destination="8jj-4y-aEU" id="kfh-la-Fdx"/>
                         <outlet property="mapViewMap" destination="Y3W-KV-gOd" id="yeq-ls-PQZ"/>
                         <outlet property="searchBar" destination="Ptp-p3-mtV" id="N9h-sk-lLG"/>
+                        <segue destination="Ly4-At-MRk" kind="popoverPresentation" identifier="popupDirections" popoverAnchorView="8bC-Xf-vdC" id="lDV-zJ-bE6">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -104,7 +94,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mIN-hz-mLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="130"/>
+            <point key="canvasLocation" x="1164" y="-152"/>
+        </scene>
+        <!--Popup View Controller-->
+        <scene sceneID="hf7-jh-wu5">
+            <objects>
+                <viewController id="Ly4-At-MRk" customClass="PopupViewController" customModule="HandyMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PY5-9H-ojK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbg-Ny-5Nf">
+                                <rect key="frame" x="16" y="58" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMZ-zo-WOH">
+                                <rect key="frame" x="105" y="118" width="165" height="54"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="C2h-rU-Z0f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Directions">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="getDirections:" destination="Ly4-At-MRk" eventType="touchUpInside" id="yk8-ZC-viW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Entrances:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eA-I8-rSS">
+                                <rect key="frame" x="16" y="206" width="142" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MUTCD_D9-6.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kdp-Qh-ohd">
+                                <rect key="frame" x="253" y="221" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="43Q-hq-Bov"/>
+                                    <constraint firstAttribute="width" constant="80" id="Yfc-K5-m5B"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Kdp-Qh-ohd" firstAttribute="leading" secondItem="0eA-I8-rSS" secondAttribute="trailing" constant="95" id="1Fb-ZJ-lEJ"/>
+                            <constraint firstItem="0eA-I8-rSS" firstAttribute="leading" secondItem="kMx-j4-EQO" secondAttribute="leading" constant="16" id="3ta-2d-9Tt"/>
+                            <constraint firstItem="0eA-I8-rSS" firstAttribute="top" secondItem="aMZ-zo-WOH" secondAttribute="bottom" constant="34" id="4U1-qL-lzq"/>
+                            <constraint firstItem="Qbg-Ny-5Nf" firstAttribute="top" secondItem="kMx-j4-EQO" secondAttribute="top" constant="58" id="Lgr-yI-GNZ"/>
+                            <constraint firstItem="aMZ-zo-WOH" firstAttribute="leading" secondItem="kMx-j4-EQO" secondAttribute="leading" constant="105" id="X52-4g-KvU"/>
+                            <constraint firstItem="Kdp-Qh-ohd" firstAttribute="top" secondItem="aMZ-zo-WOH" secondAttribute="bottom" constant="49" id="Y4J-79-V9q"/>
+                            <constraint firstItem="aMZ-zo-WOH" firstAttribute="centerX" secondItem="Qbg-Ny-5Nf" secondAttribute="centerX" id="eu6-Ur-27Q"/>
+                            <constraint firstItem="aMZ-zo-WOH" firstAttribute="top" secondItem="Qbg-Ny-5Nf" secondAttribute="bottom" constant="24" id="qq9-EC-7e1"/>
+                            <constraint firstItem="kMx-j4-EQO" firstAttribute="trailing" secondItem="Qbg-Ny-5Nf" secondAttribute="trailing" constant="16" id="wX1-og-FnL"/>
+                            <constraint firstItem="Qbg-Ny-5Nf" firstAttribute="leading" secondItem="kMx-j4-EQO" secondAttribute="leading" constant="16" id="zCS-Dk-jif"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kMx-j4-EQO"/>
+                    </view>
+                    <connections>
+                        <outlet property="directionsButton" destination="aMZ-zo-WOH" id="MYy-Ze-yBB"/>
+                        <outlet property="nameLabel" destination="Qbg-Ny-5Nf" id="a7c-9m-4FO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fbw-Fo-CD5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="225.36945812807883"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MUTCD_D9-6.svg.png" width="1200" height="1200"/>
+    </resources>
 </document>
