@@ -21,6 +21,7 @@
 		7FD8A4FB23EECD4F005205E0 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD8A4FA23EECD4F005205E0 /* PopupViewController.swift */; };
 		7FD8A4FD23EECDF0005205E0 /* MUTCD_D9-6.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8A4FC23EECDF0005205E0 /* MUTCD_D9-6.svg.png */; };
 		7FD8A4FF23EEDF9F005205E0 /* handicapspots.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8A4FE23EEDF9F005205E0 /* handicapspots.json */; };
+		7FD8A50323EF4150005205E0 /* blue_MarkerH.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8A50223EF4150005205E0 /* blue_MarkerH.png */; };
 		B3B59381906AF4B31C1ADECD /* Pods_HandyMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E243F5249E6921547784C9FD /* Pods_HandyMaps.framework */; };
 		B98C14E8D5E9B72A181FD0E2 /* Pods_HandyMaps_HandyMapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992EADDADD5760C18028FD45 /* Pods_HandyMaps_HandyMapsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		7FD8A4FA23EECD4F005205E0 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		7FD8A4FC23EECDF0005205E0 /* MUTCD_D9-6.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MUTCD_D9-6.svg.png"; sourceTree = "<group>"; };
 		7FD8A4FE23EEDF9F005205E0 /* handicapspots.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = handicapspots.json; sourceTree = "<group>"; };
+		7FD8A50223EF4150005205E0 /* blue_MarkerH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_MarkerH.png; sourceTree = "<group>"; };
 		91EA6D6BFE869AE997D90035 /* Pods-HandyMaps-HandyMapsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMaps-HandyMapsUITests.release.xcconfig"; path = "Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		992EADDADD5760C18028FD45 /* Pods_HandyMaps_HandyMapsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandyMaps_HandyMapsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44928ECBEBDD2C4E431BFC6 /* Pods_HandyMapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandyMapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 		7F6B542723EE4E31003AA400 = {
 			isa = PBXGroup;
 			children = (
+				7FD8A50123EF04CB005205E0 /* Resources */,
 				7F6B543223EE4E31003AA400 /* HandyMaps */,
 				7F6B544923EE4E32003AA400 /* HandyMapsTests */,
 				7F6B545423EE4E32003AA400 /* HandyMapsUITests */,
@@ -128,10 +131,10 @@
 			children = (
 				7FD8A4FC23EECDF0005205E0 /* MUTCD_D9-6.svg.png */,
 				7FD3CDDC23EEA5C200757FB1 /* SearchUISearchBar.swift */,
+				7FD8A50223EF4150005205E0 /* blue_MarkerH.png */,
 				7F6B543323EE4E31003AA400 /* AppDelegate.swift */,
 				7F6B543523EE4E31003AA400 /* SceneDelegate.swift */,
 				7F6B543723EE4E31003AA400 /* ViewController.swift */,
-				7FD8A4FE23EEDF9F005205E0 /* handicapspots.json */,
 				7FD8A4FA23EECD4F005205E0 /* PopupViewController.swift */,
 				7FAA32BB23EEACC600244C7F /* SearchViewController.swift */,
 				7F6B543923EE4E31003AA400 /* Main.storyboard */,
@@ -158,6 +161,14 @@
 				7F6B545723EE4E32003AA400 /* Info.plist */,
 			);
 			path = HandyMapsUITests;
+			sourceTree = "<group>";
+		};
+		7FD8A50123EF04CB005205E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7FD8A4FE23EEDF9F005205E0 /* handicapspots.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		C2EA5681399BFA11645718C6 /* Frameworks */ = {
@@ -296,6 +307,7 @@
 				7F6B543D23EE4E32003AA400 /* Assets.xcassets in Resources */,
 				7F6B543B23EE4E31003AA400 /* Main.storyboard in Resources */,
 				7FD8A4FF23EEDF9F005205E0 /* handicapspots.json in Resources */,
+				7FD8A50323EF4150005205E0 /* blue_MarkerH.png in Resources */,
 				7FD8A4FD23EECDF0005205E0 /* MUTCD_D9-6.svg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

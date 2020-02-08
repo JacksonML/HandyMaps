@@ -13,6 +13,10 @@ import CoreLocation
 import Network
 import CFNetwork
 
+struct accessibleSpots: Decodable{
+    let data: [[String]]
+}
+
 class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
     
     
@@ -36,7 +40,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     var userLocation: CLLocationManager?
     @IBOutlet weak var searchBar: UIView!
     let containerView = UIView()
-    
+    var accessibleMarkerSpots: accessibleSpots?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,11 +57,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         searchBar.addSubview(containerView)
         mapViewMap.delegate = self
         
+
+        
         searchViewController?.innerBar.delegate = self
         
         let camera = GMSCameraPosition.camera(withLatitude: 33.9475, longitude: -83.375, zoom: 15.0)
         mapViewMap.layoutIfNeeded()
         mapViewMap.camera = camera
+        
+        // Import Accessible spots as markers
+        let filePath = Bundle.main.path(forResource: "handicapspots", ofType: "json")
+        let contentData = FileManager.default.contents(atPath: filePath!)
+
+        do {
+            let parsedJSON = try JSONDecoder().decode(accessibleSpots.self, from: contentData!)
+            accessibleMarkerSpots = parsedJSON
+            for spot in parsedJSON.data {
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(spot[2])!), longitude: CLLocationDegrees(Double(spot[3])!))
+                marker.title = spot[0]
+                marker.icon = UIImage(contentsOfFile: Bundle.main.path(forResource: "blue_MarkerH", ofType: "png")!)
+                marker.map = mapViewMap
+            }
+        } catch let jsonErr {
+            print(jsonErr)
+        }
         
         // Creates a marker in the center of the map.
         let marker = GMSMarker()
@@ -70,22 +94,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         mapViewMap.settings.myLocationButton = true
     }
     
-    @IBOutlet weak var addressLabel: UILabel!
     private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
         
-        // 1
         let geocoder = GMSGeocoder()
         
-        // 2
         geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
             guard let address = response?.firstResult(), let lines = address.lines else {
                 return
             }
             
-            // 3
-            self.addressLabel.text = lines.joined(separator: "\n")
-            
-            // 4
             UIView.animate(withDuration: 0.25) {
                 self.view.layoutIfNeeded()
             }
@@ -95,6 +112,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     // Declare GMSMarker instance at the class level.
     let infoMarker = GMSMarker()
     let placesClient: GMSPlacesClient = GMSPlacesClient()
+    var walkingPath: GMSPolyline = GMSPolyline.init()
     
     // Attach an info window to the POI using the GMSMarker.
     func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String,
@@ -110,6 +128,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
                 return
             }
             if let place = place {
+                var destinationCoordinate = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+                self.performSegue(withIdentifier: "popupDirections", sender: nil)
+                self.popupViewController?.name = place.name!
+                self.popupViewController?.origin = (self.userLocation?.location!)!
+                self.popupViewController?.destination = destinationCoordinate
+                self.popupViewController?.parentViewViewController = self
+                self.destination = destinationCoordinate
                 
                 if let types = place.types {
                     self.infoMarker.snippet = types[0]
@@ -146,7 +171,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
                         return
                     }
                     if let place = place {
-                        print("The selected place is: \(place.name)")
+                        
+                            
+                        
                         var destinationCoordinate = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
                         self.performSegue(withIdentifier: "popupDirections", sender: nil)
                         self.popupViewController?.name = place.name!
@@ -164,8 +191,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         searchBar.endEditing(true)
         
     }
-    
+
     func fetchDirections(origin: CLLocation, destination: CLLocation){
+        self.walkingPath.map = nil
         let originCoords = String(origin.coordinate.latitude) + "," + String(origin.coordinate.longitude)
         let destinationCoords = String(destination.coordinate.latitude) + "," + String(destination.coordinate.longitude)
         let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=" + originCoords + "&destination=" + destinationCoords + "&mode=walking&key=ENTER_KEY_HERE"
@@ -183,13 +211,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
                     if status == "OK" {
                         routesArray = (((dic["routes"]!as! [Any])[0] as! [String:Any])["overview_polyline"] as! [String:Any])["points"] as! String
                     }
-                    
+                    if (routesArray != nil) {
                     DispatchQueue.main.async {
                         let path = GMSPath.init(fromEncodedPath: routesArray!)
-                        let singleLine = GMSPolyline.init(path: path)
-                        singleLine.strokeWidth = 6.0
-                        singleLine.strokeColor = .blue
-                        singleLine.map = self.mapViewMap
+                        self.walkingPath = GMSPolyline.init(path: path)
+                    
+                        self.walkingPath.strokeWidth = 6.0
+                        self.walkingPath.strokeColor = .blue
+                        self.walkingPath.map = self.mapViewMap
+                    }
                     }
                     
                 }

@@ -110,8 +110,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MUTCD_D9-6.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kdp-Qh-ohd">
+                                <rect key="frame" x="147" y="268" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="43Q-hq-Bov"/>
+                                    <constraint firstAttribute="width" constant="80" id="Yfc-K5-m5B"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMZ-zo-WOH">
-                                <rect key="frame" x="105" y="118" width="165" height="54"/>
+                                <rect key="frame" x="105" y="156" width="165" height="54"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="C2h-rU-Z0f"/>
@@ -124,31 +131,17 @@
                                     <action selector="getDirections:" destination="Ly4-At-MRk" eventType="touchUpInside" id="yk8-ZC-viW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Entrances:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eA-I8-rSS">
-                                <rect key="frame" x="16" y="206" width="142" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MUTCD_D9-6.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kdp-Qh-ohd">
-                                <rect key="frame" x="253" y="221" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="43Q-hq-Bov"/>
-                                    <constraint firstAttribute="width" constant="80" id="Yfc-K5-m5B"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Kdp-Qh-ohd" firstAttribute="leading" secondItem="0eA-I8-rSS" secondAttribute="trailing" constant="95" id="1Fb-ZJ-lEJ"/>
-                            <constraint firstItem="0eA-I8-rSS" firstAttribute="leading" secondItem="kMx-j4-EQO" secondAttribute="leading" constant="16" id="3ta-2d-9Tt"/>
-                            <constraint firstItem="0eA-I8-rSS" firstAttribute="top" secondItem="aMZ-zo-WOH" secondAttribute="bottom" constant="34" id="4U1-qL-lzq"/>
+                            <constraint firstItem="Kdp-Qh-ohd" firstAttribute="leading" secondItem="kMx-j4-EQO" secondAttribute="leading" constant="147" id="BgZ-WR-sxF"/>
+                            <constraint firstItem="kMx-j4-EQO" firstAttribute="trailing" secondItem="Kdp-Qh-ohd" secondAttribute="trailing" constant="148" id="GQv-vu-3pO"/>
                             <constraint firstItem="Qbg-Ny-5Nf" firstAttribute="top" secondItem="kMx-j4-EQO" secondAttribute="top" constant="58" id="Lgr-yI-GNZ"/>
                             <constraint firstItem="aMZ-zo-WOH" firstAttribute="leading" secondItem="kMx-j4-EQO" secondAttribute="leading" constant="105" id="X52-4g-KvU"/>
-                            <constraint firstItem="Kdp-Qh-ohd" firstAttribute="top" secondItem="aMZ-zo-WOH" secondAttribute="bottom" constant="49" id="Y4J-79-V9q"/>
                             <constraint firstItem="aMZ-zo-WOH" firstAttribute="centerX" secondItem="Qbg-Ny-5Nf" secondAttribute="centerX" id="eu6-Ur-27Q"/>
-                            <constraint firstItem="aMZ-zo-WOH" firstAttribute="top" secondItem="Qbg-Ny-5Nf" secondAttribute="bottom" constant="24" id="qq9-EC-7e1"/>
+                            <constraint firstItem="aMZ-zo-WOH" firstAttribute="top" secondItem="Qbg-Ny-5Nf" secondAttribute="bottom" constant="62" id="qq9-EC-7e1"/>
                             <constraint firstItem="kMx-j4-EQO" firstAttribute="trailing" secondItem="Qbg-Ny-5Nf" secondAttribute="trailing" constant="16" id="wX1-og-FnL"/>
+                            <constraint firstItem="Kdp-Qh-ohd" firstAttribute="top" secondItem="aMZ-zo-WOH" secondAttribute="bottom" constant="58" id="yO8-9B-uP9"/>
                             <constraint firstItem="Qbg-Ny-5Nf" firstAttribute="leading" secondItem="kMx-j4-EQO" secondAttribute="leading" constant="16" id="zCS-Dk-jif"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kMx-j4-EQO"/>
