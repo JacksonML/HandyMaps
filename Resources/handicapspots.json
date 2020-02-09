@@ -3,15 +3,15 @@
         ["Boyd",
             "ChIJDw-tlONs9ogRn4n0waiEpGo",
             "33.9461",
-        "-83.3749"]
+            "-83.3749"]
         ,["SLC",
             "ChIJ56yW1-Js9ogRalHBWvZRU5k",
             "33.9428",
-        "-83.3764"],
+            "-83.3764"],
         ["Snelling",
             "ChIJ2ZZxVeJs9ogRTliY_iCeNd4",
             "33.9448",
-        "-83.3766"],
+            "-83.3766"],
         ["Sanford Stadium",
             "ChIJHdKa0-Ns9ogRoxV8cRJHVeQ",
             "33.9521",
@@ -19,10 +19,95 @@
         ["MLC",
             "ChIJgYAbi-Bs9ogRdYB7Un_pKLQ",
             "33.9524",
-            "-83.3755"]
-        ["Tate".
-            
-        
+            "-83.3755"],
+        ["Tate",
+            "ChIJC481Q-Bs9ogRpQWqrKyZ8gw",
+            "33.9503",
+            "-83.3759"],
+        ["Myers Quad",
+            "ChIJRUSONOJs9ogRjOAcidmO3QE",
+            "33.9466",
+            "-83.3762"
+        ],
+        ["Myers Quad",
+            "ChIJRUSONOJs9ogRjOAcidmO3QE",
+            "33.9460",
+            "-83.3764"
+        ],
+        ["Rutherford",
+            "ChIJqViYh-Fs9ogRK1yUi63-GeE",
+            "33.9475",
+            "-83.3768"
+        ],
+        ["Conner Hall",
+            "ChIJqzmvqeZs9ogR7HLF8fG_oxY",
+            "33.9474",
+            "-83.3742"
+        ],
+        ["Aderhold Hall",
+            "ChIJk_81reRs9ogRTQPq37HcTlE",
+            "33.9421",
+            "-83.3728"
+        ],
+        ["Museum of Art",
+            "ChIJq1172Pps9ogR2_5ELP-6E7A",
+            "33.9412",
+            "-83.3706"
+        ],
+        ["Baxter St. Ramp",
+            "ChIJ7YVV1x9t9ogR7a0E5TmCzdI",
+            "33.9511",
+            "-83.3789"
+        ],
+        ["Legion",
+            "ChIJu7WdzOFs9ogRe_lihIKzYmQ",
+            "33.9503",
+            "-83.3777"
+        ],
+        ["O-House",
+            "ChIJKdtELeNs9ogRUAge6fOXiIU",
+            "33.9472",
+            "-83.3791"
+        ],
+        ["South Deck",
+            "ChIJ5_HlQuJs9ogRUfB51CEilfI",
+            "33.9456",
+            "-83.3776"
+        ],
+        ["Stegeman",
+            "ChIJDRRdK2Zt9ogRDsuwfVdbxQ8",
+            "33.9436",
+            "-83.3775"
+        ],
+        ["East Deck",
+            "ChIJF-StYvps9ogRHBtcUVFiucQ",
+            "33.9383",
+            "-83.3693"
+        ],
+        ["Rooker",
+            "ChIJXQ3Wo_Bs9ogRBlRAaLBCT4I",
+            "33.9372",
+            "-83.3674"
+        ],
+        ["Building 1516",
+            "ChIJbyCdwPBs9ogR6Si6jVSpvlk",
+            "33.9376",
+            "-83.3667"
+        ],
+        ["E06 Lot",
+            "ChIJn46Si_Bs9ogRAKhXR578fuw",
+            "33.9389",
+            "-83.3672"
+        ],
+        ["Lamer Dodd",
+            "ChIJRb8cBvBs9ogRxhqZQNoH8v4",
+            "33.9404",
+            "-83.3686"
+        ],
+        ["Vet Med",
+            "ChIJOd3hkuNs9ogRDrXwJo4-qo0",
+            "33.9417",
+            "-83.3748"
         ]
     ]    
 }
