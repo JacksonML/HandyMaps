@@ -17,6 +17,10 @@ struct accessibleSpots: Decodable{
     let data: [[String]]
 }
 
+struct trashSpots: Decodable{
+    let data: [[String]]
+}
+
 class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
     
     
@@ -41,7 +45,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     @IBOutlet weak var searchBar: UIView!
     let containerView = UIView()
     var accessibleMarkerSpots: accessibleSpots?
+    var trashMarkerSpots: trashSpots?
     var handicapMarkers: [GMSMarker] = [GMSMarker]()
+    var trashMarkers: [GMSMarker] = [GMSMarker]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,23 +72,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         mapViewMap.camera = camera
         
         // Import Accessible spots as markers
-        let filePath = Bundle.main.path(forResource: "handicapspots", ofType: "json")
-        let contentData = FileManager.default.contents(atPath: filePath!)
-
+        var filePath = Bundle.main.path(forResource: "handicapspots", ofType: "json")
+        var contentData = FileManager.default.contents(atPath: filePath!)
         do {
             let parsedJSON = try JSONDecoder().decode(accessibleSpots.self, from: contentData!)
             accessibleMarkerSpots = parsedJSON
-            /*for spot in parsedJSON.data {
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(spot[2])!), longitude: CLLocationDegrees(Double(spot[3])!))
-                marker.title = spot[0]
-                marker.icon = UIImage(contentsOfFile: Bundle.main.path(forResource: "blue_MarkerH", ofType: "png")!)
-                marker.map = mapViewMap
-            }*/
+            
             createMarkers()
         } catch let jsonErr {
             print(jsonErr)
         }
+        
+         filePath = Bundle.main.path(forResource: "trashspots", ofType: "json")
+        contentData = FileManager.default.contents(atPath: filePath!)
+
+         do {
+             let parsedJSON = try JSONDecoder().decode(trashSpots.self, from: contentData!)
+             trashMarkerSpots = parsedJSON
+             createMarkersTrash()
+         } catch let jsonErr {
+             print(jsonErr)
+         }
         
         // Creates a marker in the center of the map.
         /*let marker = GMSMarker()
@@ -106,12 +116,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         }
     }
     
+    private func createMarkersTrash(){
+        for spot in trashMarkerSpots!.data{
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(spot[0])!), longitude:  CLLocationDegrees(Double(spot[1])!))
+            marker.title = ""
+            marker.icon = UIImage(contentsOfFile: Bundle.main.path(forResource: "green_MarkerT", ofType: "png")!)
+                marker.map = mapViewMap
+                trashMarkers.append(marker)
+        }
+    }
+    
     @IBAction func handicapToggle(_ sender: UISwitch) {
         for marker in handicapMarkers {
             marker.map = sender.isOn ? mapViewMap : nil
         }
     }
     
+    @IBAction func trashToggle(_ sender: UISwitch) {
+        for marker in trashMarkers{
+            marker.map = sender.isOn ? mapViewMap : nil
+        }
+    }
     private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
         
         let geocoder = GMSGeocoder()
@@ -225,7 +251,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         self.walkingPath.map = nil
         let originCoords = String(origin.coordinate.latitude) + "," + String(origin.coordinate.longitude)
         let destinationCoords = String(destination.coordinate.latitude) + "," + String(destination.coordinate.longitude)
-        let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=" + originCoords + "&destination=" + destinationCoords + "&mode=walking&key=ENTER_KEY_HERE"
+        let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=" + originCoords + "&destination=" + destinationCoords + "&mode=walking&key=INSERT_KEY_HERE"
         let url = NSURL(string: urlString)
         
         let task = URLSession.shared.dataTask(with: url! as URL) { (data, response, error) -> Void in

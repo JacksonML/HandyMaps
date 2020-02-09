@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17248BA4CEA063DE461182A7 /* Pods_HandyMapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44928ECBEBDD2C4E431BFC6 /* Pods_HandyMapsTests.framework */; };
+		5C1A7F5223EFC9ED005F757B /* trashspots.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C1A7F5123EFC9ED005F757B /* trashspots.json */; };
+		5C1A7F5423EFCA99005F757B /* green_MarkerT.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1A7F5323EFCA99005F757B /* green_MarkerT.png */; };
 		7F6B543423EE4E31003AA400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B543323EE4E31003AA400 /* AppDelegate.swift */; };
 		7F6B543623EE4E31003AA400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B543523EE4E31003AA400 /* SceneDelegate.swift */; };
 		7F6B543823EE4E31003AA400 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B543723EE4E31003AA400 /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		34B00A385652B2616EDCE928 /* Pods-HandyMapsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMapsTests.debug.xcconfig"; path = "Target Support Files/Pods-HandyMapsTests/Pods-HandyMapsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5C1A7F5123EFC9ED005F757B /* trashspots.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trashspots.json; sourceTree = "<group>"; };
+		5C1A7F5323EFCA99005F757B /* green_MarkerT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green_MarkerT.png; path = ../../Downloads/green_MarkerT.png; sourceTree = "<group>"; };
 		614B50C2DE0F36F5EDBB34B8 /* Pods-HandyMapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMapsTests.release.xcconfig"; path = "Target Support Files/Pods-HandyMapsTests/Pods-HandyMapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		6E943125440ACF551F3B8B63 /* Pods-HandyMaps-HandyMapsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMaps-HandyMapsUITests.debug.xcconfig"; path = "Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F6B543023EE4E31003AA400 /* HandyMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,7 @@
 				7FD8A4FC23EECDF0005205E0 /* MUTCD_D9-6.svg.png */,
 				7FD3CDDC23EEA5C200757FB1 /* SearchUISearchBar.swift */,
 				7FD8A50223EF4150005205E0 /* blue_MarkerH.png */,
+				5C1A7F5323EFCA99005F757B /* green_MarkerT.png */,
 				7F6B543323EE4E31003AA400 /* AppDelegate.swift */,
 				7F6B543523EE4E31003AA400 /* SceneDelegate.swift */,
 				7F6B543723EE4E31003AA400 /* ViewController.swift */,
@@ -167,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				7FD8A4FE23EEDF9F005205E0 /* handicapspots.json */,
+				5C1A7F5123EFC9ED005F757B /* trashspots.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -305,9 +311,11 @@
 			files = (
 				7F6B544023EE4E32003AA400 /* LaunchScreen.storyboard in Resources */,
 				7F6B543D23EE4E32003AA400 /* Assets.xcassets in Resources */,
+				5C1A7F5423EFCA99005F757B /* green_MarkerT.png in Resources */,
 				7F6B543B23EE4E31003AA400 /* Main.storyboard in Resources */,
 				7FD8A4FF23EEDF9F005205E0 /* handicapspots.json in Resources */,
 				7FD8A50323EF4150005205E0 /* blue_MarkerH.png in Resources */,
+				5C1A7F5223EFC9ED005F757B /* trashspots.json in Resources */,
 				7FD8A4FD23EECDF0005205E0 /* MUTCD_D9-6.svg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
