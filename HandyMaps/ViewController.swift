@@ -41,6 +41,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     @IBOutlet weak var searchBar: UIView!
     let containerView = UIView()
     var accessibleMarkerSpots: accessibleSpots?
+    var handicapMarkers: [GMSMarker] = [GMSMarker]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,26 +72,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         do {
             let parsedJSON = try JSONDecoder().decode(accessibleSpots.self, from: contentData!)
             accessibleMarkerSpots = parsedJSON
-            for spot in parsedJSON.data {
+            /*for spot in parsedJSON.data {
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(spot[2])!), longitude: CLLocationDegrees(Double(spot[3])!))
                 marker.title = spot[0]
                 marker.icon = UIImage(contentsOfFile: Bundle.main.path(forResource: "blue_MarkerH", ofType: "png")!)
                 marker.map = mapViewMap
-            }
+            }*/
+            createMarkers()
         } catch let jsonErr {
             print(jsonErr)
         }
         
         // Creates a marker in the center of the map.
-        let marker = GMSMarker()
+        /*let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: 33.9480, longitude: -83.3773)
         marker.title = "UGA"
         marker.snippet = "University of Georgia"
-        marker.map = mapViewMap
+        marker.map = mapViewMap*/
         mapViewMap.isMyLocationEnabled = true
         mapViewMap.animate(toLocation: CLLocationCoordinate2D(latitude: (userLocation?.location?.coordinate.latitude)!, longitude: (userLocation?.location?.coordinate.longitude)!))
         mapViewMap.settings.myLocationButton = true
+    }
+    
+    private func createMarkers() {
+        for spot in accessibleMarkerSpots!.data {
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(spot[2])!), longitude: CLLocationDegrees(Double(spot[3])!))
+            marker.title = spot[0]
+            marker.icon = UIImage(contentsOfFile: Bundle.main.path(forResource: "blue_MarkerH", ofType: "png")!)
+            marker.map = mapViewMap
+            handicapMarkers.append(marker)
+        }
+    }
+    
+    @IBAction func handicapToggle(_ sender: UISwitch) {
+        for marker in handicapMarkers {
+            marker.map = sender.isOn ? mapViewMap : nil
+        }
     }
     
     private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {

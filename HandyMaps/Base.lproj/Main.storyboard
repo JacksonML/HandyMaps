@@ -28,17 +28,25 @@
                                     <segue destination="Iyt-OS-pRj" kind="embed" identifier="searchBar" id="JDg-bb-Zqd"/>
                                 </connections>
                             </containerView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHG-zb-KzD">
+                                <rect key="frame" x="16" y="707" width="51" height="31"/>
+                                <connections>
+                                    <action selector="handicapToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="QVf-mM-CCd"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Y3W-KV-gOd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="11A-Go-wGP"/>
                             <constraint firstItem="Y3W-KV-gOd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3au-Dh-3zK"/>
                             <constraint firstItem="Ptp-p3-mtV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="4MJ-ZN-EEc"/>
+                            <constraint firstItem="eHG-zb-KzD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4mL-Z0-yTe"/>
                             <constraint firstItem="Ptp-p3-mtV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HBS-zR-Bku"/>
                             <constraint firstItem="Y3W-KV-gOd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Xq1-K0-D53"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y3W-KV-gOd" secondAttribute="bottom" constant="-34" id="g9X-ZX-kzt"/>
+                            <constraint firstAttribute="bottom" secondItem="Y3W-KV-gOd" secondAttribute="bottom" id="fSK-6m-VJO"/>
                             <constraint firstItem="Y3W-KV-gOd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h25-rX-PRm"/>
                             <constraint firstItem="Y3W-KV-gOd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uHy-Jk-oFB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eHG-zb-KzD" secondAttribute="bottom" constant="40" id="w6D-uX-Gnf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ptp-p3-mtV" secondAttribute="trailing" constant="16" id="xWP-gh-Gpj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -94,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mIN-hz-mLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="-152"/>
+            <point key="canvasLocation" x="1164" y="-184"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="hf7-jh-wu5">
@@ -153,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbw-Fo-CD5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="225.36945812807883"/>
+            <point key="canvasLocation" x="1164" y="187"/>
         </scene>
     </scenes>
     <resources>
