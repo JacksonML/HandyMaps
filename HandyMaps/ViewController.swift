@@ -100,8 +100,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         marker.title = "UGA"
         marker.snippet = "University of Georgia"
         marker.map = mapViewMap*/
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .authorizedAlways, .authorizedWhenInUse:
+                mapViewMap.animate(toLocation: CLLocationCoordinate2D(latitude: (userLocation?.location?.coordinate.latitude)!, longitude: (userLocation?.location?.coordinate.longitude)!))
+                
+                break;
+            case .notDetermined:
+                break
+            case .restricted:
+                break
+            case .denied:
+                break
+            @unknown default:
+                break
+            }
+        }
         mapViewMap.isMyLocationEnabled = true
-        mapViewMap.animate(toLocation: CLLocationCoordinate2D(latitude: (userLocation?.location?.coordinate.latitude)!, longitude: (userLocation?.location?.coordinate.longitude)!))
         mapViewMap.settings.myLocationButton = true
     }
     

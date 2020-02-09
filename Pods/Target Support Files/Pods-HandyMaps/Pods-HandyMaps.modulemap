@@ -1,6 +1,0 @@
-framework module Pods_HandyMaps {
-  umbrella header "Pods-HandyMaps-umbrella.h"
-
-  export *
-  module * { export * }
-}
