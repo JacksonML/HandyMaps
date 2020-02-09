@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17248BA4CEA063DE461182A7 /* Pods_HandyMapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44928ECBEBDD2C4E431BFC6 /* Pods_HandyMapsTests.framework */; };
 		5C1A7F5223EFC9ED005F757B /* trashspots.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C1A7F5123EFC9ED005F757B /* trashspots.json */; };
+		5D14A1DF33256602DB348787 /* Pods_HandyMaps_HandyMapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA2AA9AEC50E266C868F8B4 /* Pods_HandyMaps_HandyMapsUITests.framework */; };
 		7F4A000423EFF1600077C134 /* green_MarkerT.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4A000323EFF1600077C134 /* green_MarkerT.png */; };
 		7F6B543423EE4E31003AA400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B543323EE4E31003AA400 /* AppDelegate.swift */; };
 		7F6B543623EE4E31003AA400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B543523EE4E31003AA400 /* SceneDelegate.swift */; };
@@ -24,8 +24,8 @@
 		7FD8A4FD23EECDF0005205E0 /* MUTCD_D9-6.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8A4FC23EECDF0005205E0 /* MUTCD_D9-6.svg.png */; };
 		7FD8A4FF23EEDF9F005205E0 /* handicapspots.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8A4FE23EEDF9F005205E0 /* handicapspots.json */; };
 		7FD8A50323EF4150005205E0 /* blue_MarkerH.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8A50223EF4150005205E0 /* blue_MarkerH.png */; };
-		B3B59381906AF4B31C1ADECD /* Pods_HandyMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E243F5249E6921547784C9FD /* Pods_HandyMaps.framework */; };
-		B98C14E8D5E9B72A181FD0E2 /* Pods_HandyMaps_HandyMapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992EADDADD5760C18028FD45 /* Pods_HandyMaps_HandyMapsUITests.framework */; };
+		E6AFE42CAA243BBE52AFE0EE /* Pods_HandyMapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358211CB241B455F3A7C39D4 /* Pods_HandyMapsTests.framework */; };
+		FC07673D252C2C54EE1FA153 /* Pods_HandyMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86D0F84648E6D896261BB6E /* Pods_HandyMaps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		34B00A385652B2616EDCE928 /* Pods-HandyMapsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMapsTests.debug.xcconfig"; path = "Target Support Files/Pods-HandyMapsTests/Pods-HandyMapsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2DB9895318C2F18C7EBEA72E /* Pods-HandyMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMaps.debug.xcconfig"; path = "Target Support Files/Pods-HandyMaps/Pods-HandyMaps.debug.xcconfig"; sourceTree = "<group>"; };
+		358211CB241B455F3A7C39D4 /* Pods_HandyMapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandyMapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A6B63CFBD69E760A2A25351 /* Pods-HandyMapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMapsTests.release.xcconfig"; path = "Target Support Files/Pods-HandyMapsTests/Pods-HandyMapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C1A7F5123EFC9ED005F757B /* trashspots.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trashspots.json; sourceTree = "<group>"; };
-		614B50C2DE0F36F5EDBB34B8 /* Pods-HandyMapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMapsTests.release.xcconfig"; path = "Target Support Files/Pods-HandyMapsTests/Pods-HandyMapsTests.release.xcconfig"; sourceTree = "<group>"; };
-		6E943125440ACF551F3B8B63 /* Pods-HandyMaps-HandyMapsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMaps-HandyMapsUITests.debug.xcconfig"; path = "Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7CA2AA9AEC50E266C868F8B4 /* Pods_HandyMaps_HandyMapsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandyMaps_HandyMapsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4A000323EFF1600077C134 /* green_MarkerT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_MarkerT.png; sourceTree = "<group>"; };
 		7F6B543023EE4E31003AA400 /* HandyMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6B543323EE4E31003AA400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,12 +72,11 @@
 		7FD8A4FC23EECDF0005205E0 /* MUTCD_D9-6.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MUTCD_D9-6.svg.png"; sourceTree = "<group>"; };
 		7FD8A4FE23EEDF9F005205E0 /* handicapspots.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = handicapspots.json; sourceTree = "<group>"; };
 		7FD8A50223EF4150005205E0 /* blue_MarkerH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_MarkerH.png; sourceTree = "<group>"; };
-		91EA6D6BFE869AE997D90035 /* Pods-HandyMaps-HandyMapsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMaps-HandyMapsUITests.release.xcconfig"; path = "Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests.release.xcconfig"; sourceTree = "<group>"; };
-		992EADDADD5760C18028FD45 /* Pods_HandyMaps_HandyMapsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandyMaps_HandyMapsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B44928ECBEBDD2C4E431BFC6 /* Pods_HandyMapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandyMapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0AFAFD4493AA7F91DFFBBDD /* Pods-HandyMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMaps.debug.xcconfig"; path = "Target Support Files/Pods-HandyMaps/Pods-HandyMaps.debug.xcconfig"; sourceTree = "<group>"; };
-		E243F5249E6921547784C9FD /* Pods_HandyMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandyMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFAE0F2918B9B54F855A9D7B /* Pods-HandyMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMaps.release.xcconfig"; path = "Target Support Files/Pods-HandyMaps/Pods-HandyMaps.release.xcconfig"; sourceTree = "<group>"; };
+		9A0DFAC02724E71D6E80EF28 /* Pods-HandyMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMaps.release.xcconfig"; path = "Target Support Files/Pods-HandyMaps/Pods-HandyMaps.release.xcconfig"; sourceTree = "<group>"; };
+		A1A40D6D41EE6DE3CCA73C7E /* Pods-HandyMaps-HandyMapsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMaps-HandyMapsUITests.debug.xcconfig"; path = "Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A75856B8AB52DA2E83B66EA5 /* Pods-HandyMaps-HandyMapsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMaps-HandyMapsUITests.release.xcconfig"; path = "Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B86D0F84648E6D896261BB6E /* Pods_HandyMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandyMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7841EC18F76CF44A2571ED6 /* Pods-HandyMapsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandyMapsTests.debug.xcconfig"; path = "Target Support Files/Pods-HandyMapsTests/Pods-HandyMapsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3B59381906AF4B31C1ADECD /* Pods_HandyMaps.framework in Frameworks */,
+				FC07673D252C2C54EE1FA153 /* Pods_HandyMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17248BA4CEA063DE461182A7 /* Pods_HandyMapsTests.framework in Frameworks */,
+				E6AFE42CAA243BBE52AFE0EE /* Pods_HandyMapsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,13 +100,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B98C14E8D5E9B72A181FD0E2 /* Pods_HandyMaps_HandyMapsUITests.framework in Frameworks */,
+				5D14A1DF33256602DB348787 /* Pods_HandyMaps_HandyMapsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B89B5970B2E8CB6CFC9ECE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B86D0F84648E6D896261BB6E /* Pods_HandyMaps.framework */,
+				7CA2AA9AEC50E266C868F8B4 /* Pods_HandyMaps_HandyMapsUITests.framework */,
+				358211CB241B455F3A7C39D4 /* Pods_HandyMapsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7F6B542723EE4E31003AA400 = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +126,7 @@
 				7F6B545423EE4E32003AA400 /* HandyMapsUITests */,
 				7F6B543123EE4E31003AA400 /* Products */,
 				CD7558E3F444707FBD4516D0 /* Pods */,
-				C2EA5681399BFA11645718C6 /* Frameworks */,
+				0B89B5970B2E8CB6CFC9ECE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,25 +187,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		C2EA5681399BFA11645718C6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E243F5249E6921547784C9FD /* Pods_HandyMaps.framework */,
-				992EADDADD5760C18028FD45 /* Pods_HandyMaps_HandyMapsUITests.framework */,
-				B44928ECBEBDD2C4E431BFC6 /* Pods_HandyMapsTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		CD7558E3F444707FBD4516D0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E0AFAFD4493AA7F91DFFBBDD /* Pods-HandyMaps.debug.xcconfig */,
-				FFAE0F2918B9B54F855A9D7B /* Pods-HandyMaps.release.xcconfig */,
-				6E943125440ACF551F3B8B63 /* Pods-HandyMaps-HandyMapsUITests.debug.xcconfig */,
-				91EA6D6BFE869AE997D90035 /* Pods-HandyMaps-HandyMapsUITests.release.xcconfig */,
-				34B00A385652B2616EDCE928 /* Pods-HandyMapsTests.debug.xcconfig */,
-				614B50C2DE0F36F5EDBB34B8 /* Pods-HandyMapsTests.release.xcconfig */,
+				2DB9895318C2F18C7EBEA72E /* Pods-HandyMaps.debug.xcconfig */,
+				9A0DFAC02724E71D6E80EF28 /* Pods-HandyMaps.release.xcconfig */,
+				A1A40D6D41EE6DE3CCA73C7E /* Pods-HandyMaps-HandyMapsUITests.debug.xcconfig */,
+				A75856B8AB52DA2E83B66EA5 /* Pods-HandyMaps-HandyMapsUITests.release.xcconfig */,
+				F7841EC18F76CF44A2571ED6 /* Pods-HandyMapsTests.debug.xcconfig */,
+				3A6B63CFBD69E760A2A25351 /* Pods-HandyMapsTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -207,11 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F6B545A23EE4E32003AA400 /* Build configuration list for PBXNativeTarget "HandyMaps" */;
 			buildPhases = (
-				86B4C3AA763AB9B1E2A3D0FA /* [CP] Check Pods Manifest.lock */,
+				666D400AB6E761AA3A063A22 /* [CP] Check Pods Manifest.lock */,
 				7F6B542C23EE4E31003AA400 /* Sources */,
 				7F6B542D23EE4E31003AA400 /* Frameworks */,
 				7F6B542E23EE4E31003AA400 /* Resources */,
-				17990F01BB40BC436F27DC11 /* [CP] Copy Pods Resources */,
+				316731F3E1FB26202E5A743C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,7 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F6B545D23EE4E32003AA400 /* Build configuration list for PBXNativeTarget "HandyMapsTests" */;
 			buildPhases = (
-				EF46D838B310B2255CC84204 /* [CP] Check Pods Manifest.lock */,
+				3455BB0424045E767506EC73 /* [CP] Check Pods Manifest.lock */,
 				7F6B544223EE4E32003AA400 /* Sources */,
 				7F6B544323EE4E32003AA400 /* Frameworks */,
 				7F6B544423EE4E32003AA400 /* Resources */,
@@ -245,11 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F6B546023EE4E32003AA400 /* Build configuration list for PBXNativeTarget "HandyMapsUITests" */;
 			buildPhases = (
-				3F26A92CE1C56880F436E4D9 /* [CP] Check Pods Manifest.lock */,
+				B63118C049B2FFEBEFCDD748 /* [CP] Check Pods Manifest.lock */,
 				7F6B544D23EE4E32003AA400 /* Sources */,
 				7F6B544E23EE4E32003AA400 /* Frameworks */,
 				7F6B544F23EE4E32003AA400 /* Resources */,
-				31B4A5DEDDEEFE9AFE62E186 /* [CP] Copy Pods Resources */,
+				B64233096675D7987358EB75 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,7 +337,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17990F01BB40BC436F27DC11 /* [CP] Copy Pods Resources */ = {
+		316731F3E1FB26202E5A743C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -354,24 +354,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HandyMaps/Pods-HandyMaps-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31B4A5DEDDEEFE9AFE62E186 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3F26A92CE1C56880F436E4D9 /* [CP] Check Pods Manifest.lock */ = {
+		3455BB0424045E767506EC73 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -386,14 +369,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HandyMaps-HandyMapsUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HandyMapsTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		86B4C3AA763AB9B1E2A3D0FA /* [CP] Check Pods Manifest.lock */ = {
+		666D400AB6E761AA3A063A22 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -415,7 +398,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EF46D838B310B2255CC84204 /* [CP] Check Pods Manifest.lock */ = {
+		B63118C049B2FFEBEFCDD748 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -430,11 +413,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HandyMapsTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HandyMaps-HandyMapsUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B64233096675D7987358EB75 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HandyMaps-HandyMapsUITests/Pods-HandyMaps-HandyMapsUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -620,7 +620,7 @@
 		};
 		7F6B545B23EE4E32003AA400 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0AFAFD4493AA7F91DFFBBDD /* Pods-HandyMaps.debug.xcconfig */;
+			baseConfigurationReference = 2DB9895318C2F18C7EBEA72E /* Pods-HandyMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -639,7 +639,7 @@
 		};
 		7F6B545C23EE4E32003AA400 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFAE0F2918B9B54F855A9D7B /* Pods-HandyMaps.release.xcconfig */;
+			baseConfigurationReference = 9A0DFAC02724E71D6E80EF28 /* Pods-HandyMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -658,7 +658,7 @@
 		};
 		7F6B545E23EE4E32003AA400 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34B00A385652B2616EDCE928 /* Pods-HandyMapsTests.debug.xcconfig */;
+			baseConfigurationReference = F7841EC18F76CF44A2571ED6 /* Pods-HandyMapsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -681,7 +681,7 @@
 		};
 		7F6B545F23EE4E32003AA400 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 614B50C2DE0F36F5EDBB34B8 /* Pods-HandyMapsTests.release.xcconfig */;
+			baseConfigurationReference = 3A6B63CFBD69E760A2A25351 /* Pods-HandyMapsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -704,7 +704,7 @@
 		};
 		7F6B546123EE4E32003AA400 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E943125440ACF551F3B8B63 /* Pods-HandyMaps-HandyMapsUITests.debug.xcconfig */;
+			baseConfigurationReference = A1A40D6D41EE6DE3CCA73C7E /* Pods-HandyMaps-HandyMapsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -725,7 +725,7 @@
 		};
 		7F6B546223EE4E32003AA400 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91EA6D6BFE869AE997D90035 /* Pods-HandyMaps-HandyMapsUITests.release.xcconfig */;
+			baseConfigurationReference = A75856B8AB52DA2E83B66EA5 /* Pods-HandyMaps-HandyMapsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
