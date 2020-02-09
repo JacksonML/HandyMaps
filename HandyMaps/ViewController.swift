@@ -57,8 +57,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         searchBar.addSubview(containerView)
         mapViewMap.delegate = self
         
-
-        
         searchViewController?.innerBar.delegate = self
         
         let camera = GMSCameraPosition.camera(withLatitude: 33.9475, longitude: -83.375, zoom: 15.0)
@@ -119,7 +117,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
                  name: String, location: CLLocationCoordinate2D) {
         
         let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
-            UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.types.rawValue))!
+            UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.types.rawValue) | UInt(GMSPlaceField.coordinate.rawValue))!
         
         placesClient.fetchPlace(fromPlaceID: placeID, placeFields: fields, sessionToken: nil, callback: {
             (place: GMSPlace?, error: Error?) in
@@ -128,13 +126,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
                 return
             }
             if let place = place {
-                var destinationCoordinate = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-                self.performSegue(withIdentifier: "popupDirections", sender: nil)
-                self.popupViewController?.name = place.name!
-                self.popupViewController?.origin = (self.userLocation?.location!)!
-                self.popupViewController?.destination = destinationCoordinate
-                self.popupViewController?.parentViewViewController = self
-                self.destination = destinationCoordinate
+                self.segueHelper(place: place, placeID: nil)
                 
                 if let types = place.types {
                     self.infoMarker.snippet = types[0]
@@ -149,6 +141,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         infoMarker.infoWindowAnchor.y = 1
         infoMarker.map = mapView
         mapView.selectedMarker = infoMarker
+    }
+    
+    func segueHelper(place: GMSPlace, placeID: String?) {
+        var destinationCoordinate: CLLocation?
+        for object in self.accessibleMarkerSpots!.data {
+            if let placeId = placeID {
+            if (placeId == object[1]) {
+                destinationCoordinate = CLLocation(latitude: CLLocationDegrees(Double(object[2])!), longitude: CLLocationDegrees(Double(object[3])!))
+                break
+            } else {
+                destinationCoordinate = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+            }
+            } else {
+            if (place.placeID == object[1]) {
+                destinationCoordinate = CLLocation(latitude: CLLocationDegrees(Double(object[2])!), longitude: CLLocationDegrees(Double(object[3])!))
+                break
+            } else {
+                destinationCoordinate = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+            }
+            }
+        }
+        self.performSegue(withIdentifier: "popupDirections", sender: nil)
+        self.popupViewController?.name = place.name!
+        self.popupViewController?.origin = (self.userLocation?.location!)!
+        self.popupViewController?.destination = destinationCoordinate!
+        self.popupViewController?.parentViewViewController = self
+        self.destination = destinationCoordinate!
     }
     
     var destination: CLLocation = .init()
@@ -171,16 +190,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
                         return
                     }
                     if let place = place {
-                        
-                            
-                        
-                        var destinationCoordinate = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-                        self.performSegue(withIdentifier: "popupDirections", sender: nil)
-                        self.popupViewController?.name = place.name!
-                        self.popupViewController?.origin = (self.userLocation?.location!)!
-                        self.popupViewController?.destination = destinationCoordinate
-                        self.popupViewController?.parentViewViewController = self
-                        self.destination = destinationCoordinate
+                        self.segueHelper(place: place, placeID: firstResult.placeID)
                         //self.fetchDirections(origin: (self.userLocation?.location)!, destination: destinationCoordinate)
                     }
                     
@@ -189,7 +199,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
             }
         })
         searchBar.endEditing(true)
-        
     }
 
     func fetchDirections(origin: CLLocation, destination: CLLocation){
